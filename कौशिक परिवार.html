@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+        <style>
+        body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flip-card {
+  background-color: transparent;
+  float: left;
+   width:  40vw;
+  height: 25vh;
+  perspective: 1000px;
+  margin-left: 10vw;
+  margin-top: 5vh;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.man-card {
+  background-color: transparent;
+  float: left;
+   width:  40vw;
+  height: 25vh;
+  perspective: 1000px;
+  margin-left: 5vw;
+  margin-top: 5vh;
+}
+
+.man-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.man-card:hover .man-card-inner {
+  transform: rotateY(180deg);
+}
+
+.man-card-front, .man-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.man-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.man-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+img{
+     width:  40vw;
+  height: 25vh;
+}
+.linehorisontal{
+    height: 10vh;
+    width: 2vw;
+    background-color: black;
+    margin-top: 30vh;
+    margin-left: 27vw;
+    position: absolute;
+}
+.linehorisontal2{
+    height: 10vh;
+    width: 2vw;
+    background-color: black;
+    margin-top: 30vh;
+    margin-left: 75vw;
+    position: absolute;
+}
+.linevertical{
+    height: 2vw;
+    width: 70vw;
+    background-color: black;
+    margin-top: 40vh;
+    margin-left: 7vw;
+    position: absolute;
+    
+}
+.linehorisontal3{
+    height: 260vh;
+    width: 2vw;
+    background-color: black;
+    margin-top: 40vh;
+    margin-left: 7vw;
+    position: absolute;
+}
+.linehorisontal4{
+    height: 2vw;
+    width: 10vw;
+    background-color: black;
+    margin-top: 55vh;
+    margin-left: 7vw;
+    position: absolute;
+}
+.linehorisontal12{
+    height: 2vw;
+    width: 10vw;
+    background-color: black;
+    margin-top: 125vh;
+    margin-left: 7vw;
+    position: absolute;
+}
+.linehorisontal13{
+  height: 2vw;
+    width: 8vw;
+    background-color: black;
+    margin-top: 125vh;
+    margin-left: 52vw;
+    position: absolute;
+}
+.linehorisontal5{
+    height: 2vw;
+    width: 5vw;
+    background-color: black;
+    margin-top: 55vh;
+    margin-left: 52vw;
+    position: absolute;
+}
+.linehorisontal10{
+  height: 15vh;
+    width: 2vw;
+    background-color: black;
+    margin-top: 135vh;
+    margin-left: 30vw;
+    position: absolute;
+}
+
+.linehorisontal9{
+  height: 15vh;
+    width: 2vw;
+    background-color: black;
+    margin-top: 135vh;
+    margin-left: 77vw;
+    position: absolute;
+}
+.linehorisontal17{
+  height: 15vh;
+    width: 2vw;
+    background-color: black;
+    margin-top: 205vh;
+    margin-left: 30vw;
+    position: absolute;
+}
+
+.linehorisontal18{
+  height: 15vh;
+    width: 2vw;
+    background-color: black;
+    margin-top: 205vh;
+    margin-left: 77vw;
+    position: absolute;
+}
+.linehorisontal22{
+  height: 15vh;
+    width: 2vw;
+    background-color: black;
+    margin-top: 275vh;
+    margin-left: 30vw;
+    position: absolute;
+}
+
+.linehorisontal23{
+  height: 15vh;
+    width: 2vw;
+    background-color: black;
+    margin-top: 275vh;
+    margin-left: 77vw;
+    position: absolute;
+}
+.linehorisontal15{
+  height: 2vw;
+    width: 10vw;
+    background-color: black;
+    margin-top: 195vh;
+    margin-left: 7vw;
+    position: absolute;
+}
+.linehorisontal20{
+  height: 2vw;
+    width: 8vw;
+    background-color: black;
+    margin-top: 265vh;
+    margin-left: 52vw;
+    position: absolute;
+}
+.linehorisontal21{
+  height: 2vw;
+    width: 10vw;
+    background-color: black;
+    margin-top: 265vh;
+    margin-left: 7vw;
+    position: absolute;
+}
+.linehorisontal16{
+  height: 2vw;
+    width: 8vw;
+    background-color: black;
+    margin-top: 195vh;
+    margin-left: 52vw;
+    position: absolute;
+}
+
+.linehorisontal11{
+  height: 2vw;
+    width: 47vw;
+    background-color: black;
+    margin-top: 141vh;
+    margin-left: 31vw;
+    position: absolute;
+}
+.linehorisontal19{
+  height: 2vw;
+    width: 47vw;
+    background-color: black;
+    margin-top: 212vh;
+    margin-left: 31vw;
+    position: absolute;
+}
+.linehorisontal24{
+  height: 2vw;
+    width: 47vw;
+    background-color: black;
+    margin-top: 282vh;
+    margin-left: 31vw;
+    position: absolute;
+}
+.linehorisontal6{
+    height: 15vh;
+    width: 2vw;
+    background-color: black;
+    margin-top: 65vh;
+    margin-left: 30vw;
+    position: absolute;
+}
+.linehorisontal7{
+  height: 15vh;
+    width: 2vw;
+    background-color: black;
+    margin-top: 65vh;
+    margin-left: 73vw;
+    position: absolute;
+}
+.linehorisontal8{
+  height: 2vw;
+    width: 43vw;
+    background-color: black;
+    margin-top: 72vh;
+    margin-left: 30vw;
+    position: absolute;
+}
+.slip-card {
+  background-color: transparent;
+  float: left;
+   width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 17vw;
+  margin-top: 15vh;
+}
+.slip-card img{
+  width:  35vw;
+  height: 20vh;
+}
+
+.slip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.slip-card:hover .slip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.slip-card-front, .slip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.slip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.slip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.tan-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 5vw;
+  margin-top: 5vh;
+}
+.tan-card img{
+  width:  35vw;
+  height: 20vh;
+}
+
+.tan-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.tan-card:hover .tan-card-inner {
+  transform: rotateY(180deg);
+}
+
+.tan-card-front, .tan-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.tan-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.tan-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.dlip-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 17vw;
+  margin-top: 15vh;
+}
+.dlip-card img{
+  width:  35vw;
+  height: 20vh;
+}
+
+
+.dlip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.dlip-card:hover .dlip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.dlip-card-front, .dlip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.dlip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.dlip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.san-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 60vw;
+  margin-top: -20vh;
+  }
+  .san-card img{
+  width:  35vw;
+  height: 20vh;
+}
+.san-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.san-card:hover .san-card-inner {
+  transform: rotateY(180deg);
+}
+
+.san-card-front, .san-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.san-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.san-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.blip-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 17vw;
+  margin-top: 15vh;
+}
+.blip-card img{
+  width:  35vw;
+  height: 20vh;
+}
+
+.blip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.blip-card:hover .blip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.blip-card-front, .blip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.blip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.blip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.sin-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 60vw;
+  margin-top: -20vh;
+}
+.sin-card img{
+  width:  35vw;
+  height: 20vh;
+}
+
+.sin-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.sin-card:hover .sin-card-inner {
+  transform: rotateY(180deg);
+}
+
+.sin-card-front, .sin-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.sin-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.sin-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.clip-card {
+  background-color: transparent;
+  float: left;
+   width:  40vw;
+  height: 25vh;
+  perspective: 1000px;
+  margin-left: 10vw;
+  margin-top: 5vh;
+}
+
+.clip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.clip-card:hover .clip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.clip-card-front, .clip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.clip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.clip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.clip-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 17vw;
+  margin-top: 15vh;
+}
+.clip-card img{
+  width:  35vw;
+  height: 20vh;
+}
+.fin-card img{
+  width:  35vw;
+  height: 20vh;
+}
+.fin-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 60vw;
+  margin-top: -20vh;
+}
+
+.fin-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.fin-card:hover .fin-card-inner {
+  transform: rotateY(180deg);
+}
+
+.fin-card-front, .fin-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.fin-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.fin-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.mlip-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 17vw;
+  margin-top: 15vh;
+}
+.mlip-card img{
+  width:  35vw;
+  height: 20vh;
+}
+.kin-card img{
+  width:  35vw;
+  height: 20vh;
+}
+
+.mlip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.mlip-card:hover .mlip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.mlip-card-front, .mlip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.mlip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.mlip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.kin-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 60vw;
+  margin-top: -20vh;
+}
+
+.kin-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.kin-card:hover .kin-card-inner {
+  transform: rotateY(180deg);
+}
+
+.kin-card-front, .kin-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.kin-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.kin-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.llip-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 17vw;
+  margin-top: 15vh;
+}
+.llip-card img{
+  width:  35vw;
+  height: 20vh;
+}
+.slin-card img{
+  width:  35vw;
+  height: 20vh;
+}
+
+.llip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.llip-card:hover .llip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.llip-card-front, .llip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.llip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.llip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.slin-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 60vw;
+  margin-top: -20vh;
+}
+
+.slin-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.slin-card:hover .slin-card-inner {
+  transform: rotateY(180deg);
+}
+
+.slin-card-front, .slin-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.slin-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.slin-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.vlip-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 17vw;
+  margin-top: 15vh;
+}
+.vlip-card img{
+  width:  35vw;
+  height: 20vh;
+}
+.tlin-card img{
+  width:  35vw;
+  height: 20vh;
+}
+
+.vlip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.vlip-card:hover .vlip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.vlip-card-front, .vlip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.vlip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.vlip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.tlin-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 60vw;
+  margin-top: -20vh;
+}
+
+.tlin-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.tlin-card:hover .tlin-card-inner {
+  transform: rotateY(180deg);
+}
+
+.tlin-card-front, .tlin-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.tlin-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.tlin-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.hlip-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 17vw;
+  margin-top: 15vh;
+}
+.hlip-card img{
+  width:  35vw;
+  height: 20vh;
+}
+.hlin-card img{
+  width:  35vw;
+  height: 20vh;
+}
+
+.hlip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.hlip-card:hover .hlip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.hlip-card-front, .hlip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.hlip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.hlip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.hlin-card {
+  background-color: transparent;
+  float: left;
+  width:  35vw;
+  height: 20vh;
+  perspective: 1000px;
+  margin-left: 60vw;
+  margin-top: -20vh;
+}
+
+.hlin-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.hlin-card:hover .hlin-card-inner {
+  transform: rotateY(180deg);
+}
+
+.hlin-card-front, .hlin-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.hlin-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.hlin-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+        </style>
+      </head>
+<style>
+
+</style>
+<body>
+    <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://lh3.googleusercontent.com/MithV4JUS9zc9-MqXa_EXsSoK_2Li4NFduqOjuJR__VPXP0FdLPTrsUaiRcvPb3gEUPdcLXtt5nwXiXQSCx2PFt8HUM4Wixlcq6_N0RxJX5gDgvRwbRws7y9Z_PsXauqy6uXxEVbqMuGna9qEvm69PsAo3XbhGlcmI8PhMFMMO99U36RJ45xXbm7YTODtqk8hxZL9AlscuS5ywZpvqc6yUyxUdCvkACX2GQnjC26rvPMFCFgcon4FpRMFKv0HwY8iRuINV95ynIwIlt1DvRIjHwhInbbUehhHBv6e8OWl7wZ_ggPAYNFLVc9WJvNT6BleG9fANmE1SlwIk37SLffI_nvNy8PX1xnBhiI3dxSQaF3YeE4D9SqGgZvTkdCp0azUL5oLuZMHmmS7XjMAGsid-z5WZ1eUNKQswoY3lCWkeyqmw61cz8gTpbLDrkLFA7frQCPNwONvwONj106M8ZNb9ik2RVVzuQgNtpV-JbX7AYOr9vskpLdpjzOl4cF4U83XLu2jlJ_zFPUJpssEqLq06YzgWG1LuCqY3QXpm3EdsnDn-2RXUtknLiyffJNoCsPyXhz2Fo3aIAeDmZg8WeQVp5nCqwN1LC9k5P7ON4X61BVvKGofrINi01LA6wOzShC7OaFAQ7NVK6p08gtrKctGPKvZaAB1THO_jQuuChNIV2OpkEzTlNV5cdj_t4FQ7YhFuF3LB57mikTU5vvBN7GlYgK=w1218-h914-no?authuser=1" alt="Avatar" >
+          </div>
+          <div class="flip-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>  
+      <div class="man-card" style="float: left;">
+        <div class="man-card-inner">
+          <div class="man-card-front">
+            <img src="https://lh3.googleusercontent.com/A3KuhFIw-SxKOz2o5Z7jpez90l8Btu4tAYvGrtezdubvnVBFwny_bGsOokSrDve48rSW5RLmKrQ_sHSaXw0PDvIsQWq8LYJt9tFmAHIuSCZAASAFFPOU1OiTf8eHMtwxhBCzTlIaxdNIJT_mY0dYujX0QN-MXBgvPvcgpCwtgO-objyIqLygWQ4WrX1cO_CYp-3DMgFNEcmDhIAq14dhOebAlIQ5wnkTnzgCKTueiU2iMPTnOImhOZf2jR7yFmDCLJaz3FNMCwjLyArpTN4VgjZwbzejsiS_QvYUJyvZZr1tVEcnT1d7GGWBBuskMi3Tsip5X4e0sXoZLyiJZ0TAjFBD8VjnlUwXIZ5LaNIzBFBrPFrTdqOS7UhZVyaQLfctlt6cSHZRE6rs2IOp9nmy92UFsTDBp2EelEdv6w36yU-fZyWryXp5pfMcRtnAnbNJizYw7rzLAkhp54vHO19mDTrOPS9N96-zISrUyDCFNU8tWdMPNrt6mAvqbXNIDwszV9N9HZbwhJvCXdom432-DBQczL-VQh7ktMCAKtEGnSI-Qe9qzu95HZCur7llcgp7Sr0NCC_zv5UNRG5lkbteLaWTvIdkGcE9c00cX6vp6e4nx0g-hV2v1A9zL11MhBbYmse-S9nV0M6e0o6CTGKiZ80-ovbjUB_DJYIcZs0pocFgQmLBGLR9mxGAc-1OylX4zBafjfcdSPpma-RBVr-LTNZg=w1218-h914-no?authuser=1" alt="Avatar">
+          </div>
+          <div class="man-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>    
+      
+      <div class="linehorisontal"></div>
+      <div class="linehorisontal13"></div>
+      <div class="linehorisontal2"></div>
+      <div class="linevertical"></div>
+      <div class="linehorisontal4"></div>
+      <div class="linehorisontal12"></div>
+      <div class="linehorisontal3"></div>
+      <div class="linehorisontal5"></div>
+      <div class="linehorisontal6"></div>
+      <div class="linehorisontal7"></div>
+      <div class="linehorisontal8"></div>
+      <div class="linehorisontal9"></div>
+      <div class="linehorisontal10"></div>
+      <div class="linehorisontal11"></div>
+      <div class="linehorisontal14"></div>
+      <div class="linehorisontal15"></div>
+      <div class="linehorisontal16"></div>
+      <div class="linehorisontal17"></div>
+      <div class="linehorisontal18"></div>
+      <div class="linehorisontal20"></div>
+      <div class="linehorisontal21"></div>
+      <div class="linehorisontal22"></div>
+      <div class="linehorisontal23"></div>
+      <div class="linehorisontal24"></div>
+
+      <div class="linehorisontal19"></div>
+
+
+      
+      
+      <div class="slip-card" >
+        <div class="slip-card-inner">
+          <div class="slip-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.24 (1).jpeg" alt="Avatar" >
+          </div>
+          <div class="slip-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>  
+      <div class="tan-card" style="margin-top: 15vh;">
+        <div class="tan-card-inner">
+          <div class="tan-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.24.jpeg" alt="Avatar">
+          </div>
+          <div class="tan-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div> 
+      </div> 
+
+      <div class="dlip-card" >
+        <div class="dlip-card-inner">
+          <div class="dlip-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.23 (11).jpeg" alt="Avatar" >
+          </div>
+          <div class="dlip-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>  
+      <div class="san-card" >
+        <div class="san-card-inner">
+          <div class="san-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.23 (10).jpeg" alt="Avatar">
+          </div>
+          <div class="san-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div> 
+      <div class="blip-card" >
+        <div class="blip-card-inner">
+          <div class="blip-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.23 (1).jpeg" alt="Avatar" >
+          </div>
+          <div class="blip-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>  
+      <div class="sin-card">
+        <div class="sin-card-inner">
+          <div class="sin-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.23 (6).jpeg" alt="Avatar">
+          </div>
+          <div class="sin-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div> 
+      <div class="clip-card">
+        <div class="clip-card-inner">
+          <div class="clip-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.23 (5).jpeg" alt="Avatar" >
+          </div>
+          <div class="clip-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>  
+      <div class="fin-card" >
+        <div class="fin-card-inner">
+          <div class="fin-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.23 (8).jpeg" alt="Avatar">
+          </div>
+          <div class="fin-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div> 
+      <div class="mlip-card">
+        <div class="mlip-card-inner">
+          <div class="mlip-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.23 (3).jpeg" alt="Avatar" >
+          </div>
+          <div class="mlip-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>  
+      <div class="kin-card" >
+        <div class="kin-card-inner">
+          <div class="kin-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.23 (9).jpeg" alt="Avatar">
+          </div>
+          <div class="kin-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div> 
+      <div class="llip-card">
+        <div class="llip-card-inner">
+          <div class="llip-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.23 (2).jpeg" alt="Avatar" >
+          </div>
+          <div class="llip-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>  
+      <div class="slin-card" >
+        <div class="slin-card-inner">
+          <div class="slin-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.24 (2).jpeg" alt="Avatar">
+          </div>
+          <div class="slin-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div> 
+      <div class="vlip-card">
+        <div class="vlip-card-inner">
+          <div class="vlip-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.23 (4).jpeg" alt="Avatar" >
+          </div>
+          <div class="vlip-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>  
+      <div class="tlin-card" >
+        <div class="tlin-card-inner">
+          <div class="tlin-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.23.jpeg" alt="Avatar">
+          </div>
+          <div class="tlin-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div> 
+      <div class="hlip-card">
+        <div class="hlip-card-inner">
+          <div class="hlip-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.23 (7).jpeg" alt="Avatar" >
+          </div>
+          <div class="hlip-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>  
+      <div class="hlin-card" >
+        <div class="hlin-card-inner">
+          <div class="hlin-card-front">
+            <img src="https://raw.githubusercontent.com/siddhant2424-cmyk/whatsappimages.github.io/main/WhatsApp Image 2021-05-30 at 18.47.24 (3).jpeg" alt="Avatar">
+          </div>
+          <div class="hlin-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div> 
+
+</body>
+</html>
